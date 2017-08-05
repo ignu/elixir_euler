@@ -1,18 +1,18 @@
 defmodule Euler2 do
-  @moduledoc """
-  Documentation for Euler2.
-  """
+  def sum_sequence(limit) do
+    do_fib(0, 1, 0, limit)
+  end
 
-  @doc """
-  Hello world.
+  defp do_fib(a, b, acc, limit) when b < limit do
+    acc = case rem(b, 2) do
+      0 -> acc + b
+      _ -> acc
+    end
 
-  ## Examples
+    do_fib(b, a+b, acc, limit)
+  end
 
-      iex> Euler2.hello
-      :world
-
-  """
-  def hello do
-    :world
+  defp do_fib(_a, b, acc, limit) when b >= limit do
+    acc
   end
 end

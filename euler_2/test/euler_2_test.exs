@@ -3,6 +3,6 @@ defmodule Euler2Test do
   doctest Euler2
 
   test "greets the world" do
-    assert Euler2.hello() == :world
+    assert Euler2.sum_sequence(4_000_000) == 4613732
   end
 end
